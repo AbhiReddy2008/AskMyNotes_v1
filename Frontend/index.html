@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AskMyNotes</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet" />
+
+  <!-- 🔗 1. Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind custom theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            mono:    ['Space Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- 🔗 2. External Custom CSS (same folder) -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ======== APP SHELL ======== -->
+  <div class="app-shell">
+
+    <!-- ======== SIDEBAR ======== -->
+    <aside class="sidebar">
+
+      <!-- Sidebar Top — Logo -->
+      <div class="sidebar-logo">
+        <span class="logo-icon">📒</span>
+        <span class="logo-text">AskMyNotes</span>
+      </div>
+
+      <!-- New Chat Button -->
+      <div class="sidebar-new-btn">
+        + New Session
+      </div>
+
+      <!-- Recent Questions -->
+      <div class="sidebar-section-label">Recent</div>
+
+      <nav class="sidebar-nav">
+        <a href="#" class="sidebar-item active">
+          <span class="item-icon">💬</span>
+          <span class="item-text">What is a Binary Tree?</span>
+        </a>
+        <a href="#" class="sidebar-item">
+          <span class="item-icon">💬</span>
+          <span class="item-text">Explain AVL rotations</span>
+        </a>
+        <a href="#" class="sidebar-item">
+          <span class="item-icon">💬</span>
+          <span class="item-text">Summarise Chapter 3</span>
+        </a>
+        <a href="#" class="sidebar-item">
+          <span class="item-icon">💬</span>
+          <span class="item-text">What is barrier potential?</span>
+        </a>
+        <a href="#" class="sidebar-item">
+          <span class="item-icon">💬</span>
+          <span class="item-text">Difference: stack vs queue</span>
+        </a>
+        <a href="#" class="sidebar-item">
+          <span class="item-icon">💬</span>
+          <span class="item-text">Notes on PN junction diode</span>
+        </a>
+      </nav>
+
+      <!-- Spacer -->
+      <div class="sidebar-spacer"></div>
+
+      <!-- Account Section — Bottom -->
+      <div class="sidebar-account">
+        <div class="account-avatar">A</div>
+        <div class="account-info">
+          <p class="account-name">Abhi</p>
+          <p class="account-email">abhi@kmce.ac.in</p>
+        </div>
+        <div class="account-dots">⋯</div>
+      </div>
+
+    </aside>
+
+    <!-- ======== MAIN CONTENT ======== -->
+    <main class="main-content">
+
+      <!-- Top bar -->
+      <div class="topbar">
+        <span class="topbar-title">📒 AskMyNotes</span>
+        <span class="topbar-sub font-mono">Upload. Ask. Learn.</span>
+      </div>
+
+      <!-- Content Area -->
+      <div class="content-area">
+
+        <!-- UPLOAD SECTION -->
+        <section class="card">
+          <p class="section-label">📂 01 — Upload File</p>
+
+          <!-- File type badges -->
+          <div class="badges-row">
+            <span class="badge">📄 PDF</span>
+            <span class="badge">🖼️ Image</span>
+            <span class="badge">🎬 Video</span>
+            <span class="badge">📝 TXT</span>
+            <span class="badge">📊 CSV</span>
+            <span class="badge">🗂️ DOCX</span>
+          </div>
+
+          <!-- Drop zone -->
+          <div class="drop-zone">
+            <input
+              type="file"
+              name="file-input"
+              class="drop-input"
+              accept=".pdf,.txt,.csv,.docx,.doc,.png,.jpg,.jpeg,.gif,.webp,.mp4,.mov,.avi,.mkv,.webm"
+            />
+            <span class="drop-icon">🗃️</span>
+            <p class="drop-text">Drag &amp; drop your file here</p>
+            <p class="drop-subtext">or click to browse — PDF, image, video, TXT &amp; more</p>
+          </div>
+        </section>
+
+        <!-- QUESTION SECTION -->
+        <section class="card">
+          <p class="section-label">💬 02 — Ask a Question</p>
+          <textarea
+            name="query"
+            rows="4"
+            placeholder="✏️  Type your question… e.g. What is the main topic of chapter 3?"
+            class="query-textarea"
+          ></textarea>
+          <button type="submit" class="ask-btn">🚀 Ask Now →</button>
+        </section>
+
+        <!-- ANSWER SECTION -->
+        <section class="card">
+          <p class="section-label">💡 03 — Answer</p>
+          <div class="answer-box">
+            <p class="answer-placeholder">Answer will appear here once you ask a question…</p>
+          </div>
+        </section>
+
+      </div><!-- end content-area -->
+
+    </main><!-- end main-content -->
+
+  </div><!-- end app-shell -->
+
+  <!-- ✅ ZERO JavaScript -->
+
+</body>
+</html>
