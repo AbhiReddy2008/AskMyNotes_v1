@@ -6,13 +6,25 @@
     <button onclick="changeText()">
       Change Text
       </button>
+      <button id="btn">Click Me</button>
+
+    
+
+
 
     <script>
         function changeText() {
             let element = document.getElementById("demo");
             element.textContent = "Text changed by JavaScript!";
         }
+    const button1 = document.getElementById("btn");
 
+        button1.addEventListener("click", function () {
+            console.log("First");
+        });
+        button1.addEventListener("click", function () {
+            console.log("Second");
+        });
       
     </script>
 </body>
