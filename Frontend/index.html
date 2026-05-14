@@ -3,68 +3,63 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>AskMyNotes</title>
 
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
 
-  <!-- Tailwind CSS -->
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Tailwind Theme -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            display: ['Syne', 'sans-serif'],
-            mono: ['Space Mono', 'monospace'],
-          }
-        }
-      }
-    }
-  </script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css"/>
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- Favicon -->
+  <link
+    rel="icon"
+    href="https://cdn-icons-png.flaticon.com/512/2991/2991148.png"
+  />
 </head>
 
 <body>
 
-  <!-- ===== APP SHELL ===== -->
   <div class="app-shell">
 
-    <!-- ===== SIDEBAR ===== -->
+    <!-- SIDEBAR -->
     <aside class="sidebar">
 
-      <!-- Logo -->
+      <!-- LOGO -->
       <div class="sidebar-logo">
-        <span class="logo-icon">📒</span>
-        <span class="logo-text">AskMyNotes</span>
+
+        <div class="logo-box">
+          📒
+        </div>
+
+        <span class="logo-text">
+          AskMyNotes
+        </span>
+
       </div>
 
-      <!-- New Session -->
+      <!-- NEW SESSION -->
       <div class="sidebar-new-btn">
         + New Session
       </div>
 
-      <!-- Recent -->
+      <!-- RECENT -->
       <div class="sidebar-section-label">
         Recent
       </div>
 
-      <!-- Sidebar Chats -->
+      <!-- SIDEBAR CHATS -->
       <nav class="sidebar-nav">
 
         <a
           href="#"
           class="sidebar-item active"
-          data-answer="A Binary Tree is a tree data structure where each node has at most two children called left and right child."
+          data-answer="A Binary Tree is a tree data structure where each node has at most two children."
         >
           <span class="item-icon">💬</span>
           <span class="item-text">
@@ -75,7 +70,7 @@
         <a
           href="#"
           class="sidebar-item"
-          data-answer="AVL rotations are balancing operations used to maintain height balance in AVL Trees."
+          data-answer="AVL rotations are balancing operations used in AVL trees."
         >
           <span class="item-icon">💬</span>
           <span class="item-text">
@@ -86,7 +81,7 @@
         <a
           href="#"
           class="sidebar-item"
-          data-answer="Chapter 3 mainly discusses the fundamentals and core concepts in simplified form."
+          data-answer="Chapter 3 explains the main core concepts and basics."
         >
           <span class="item-icon">💬</span>
           <span class="item-text">
@@ -97,7 +92,7 @@
         <a
           href="#"
           class="sidebar-item"
-          data-answer="Barrier potential is the voltage formed across a PN junction because of diffusion."
+          data-answer="Barrier potential is the voltage developed across a PN junction."
         >
           <span class="item-icon">💬</span>
           <span class="item-text">
@@ -107,10 +102,9 @@
 
       </nav>
 
-      <!-- Spacer -->
       <div class="sidebar-spacer"></div>
 
-      <!-- Account -->
+      <!-- ACCOUNT -->
       <div class="sidebar-account">
 
         <div class="account-avatar">
@@ -118,115 +112,119 @@
         </div>
 
         <div class="account-info">
-          <p class="account-name">Abhi</p>
+          <p class="account-name">
+            Abhi
+          </p>
+
           <p class="account-email">
             abhi@kmce.ac.in
           </p>
-        </div>
-
-        <div class="account-dots">
-          ⋯
         </div>
 
       </div>
 
     </aside>
 
-    <!-- ===== MAIN CONTENT ===== -->
+    <!-- MAIN -->
     <main class="main-content">
 
-      <!-- ===== TOPBAR ===== -->
+      <!-- TOPBAR -->
       <div class="topbar">
 
         <div class="topbar-center">
 
-          <span class="topbar-title">
-            📒 AskMyNotes
-          </span>
+          <div class="main-logo">
+            📒
+          </div>
 
-          <span class="topbar-sub">
+          <h1 class="topbar-title">
+            AskMyNotes
+          </h1>
+
+          <p class="topbar-sub">
             Upload. Ask. Learn.
-          </span>
+          </p>
 
         </div>
 
       </div>
 
-      <!-- ===== CONTENT ===== -->
+      <!-- CONTENT -->
       <div class="content-area">
 
-        <!-- ===== UPLOAD SECTION ===== -->
+        <!-- UPLOAD -->
         <section class="card">
 
           <p class="section-label">
-            📂 01 — Upload File
+            📂 Upload File
           </p>
 
-          <!-- File Type Badges -->
+          <!-- BADGES -->
           <div class="badges-row">
+
             <span class="badge">📄 PDF</span>
             <span class="badge">📝 TXT</span>
             <span class="badge">📊 CSV</span>
-            <span class="badge">🗂️ DOCX</span>
             <span class="badge">🖼️ Image</span>
             <span class="badge">🎬 Video</span>
+
           </div>
 
-          <!-- Drop Zone -->
+          <!-- DROP ZONE -->
           <div class="drop-zone">
 
             <input
               type="file"
               id="pdf-input"
-              name="file-input"
               class="drop-input"
-              accept=".pdf,.txt,.csv,.doc,.docx,.png,.jpg,.jpeg,.gif,.webp,.mp4,.mov,.avi,.mkv,.webm"
+              accept=".pdf,.txt,.csv,.doc,.docx,.png,.jpg,.jpeg,.gif,.webp,.mp4"
             />
 
-            <span class="drop-icon">
-              🗃️
-            </span>
+            <div id="preview-area">
 
-            <p class="drop-text">
-              Drag & drop your file here
-            </p>
+              <span class="drop-icon">
+                🗃️
+              </span>
 
-            <p class="drop-subtext">
-              or click to browse — PDF, image, video, TXT & more
-            </p>
+              <p class="drop-text">
+                Drag & drop your file here
+              </p>
 
-            <!-- Upload Status -->
+              <p class="drop-subtext">
+                PDF, Images, TXT, DOCX, Video & more
+              </p>
+
+            </div>
+
             <p id="upload-status"></p>
 
           </div>
 
         </section>
 
-        <!-- ===== QUESTION SECTION ===== -->
+        <!-- QUESTION -->
         <section class="card">
 
           <p class="section-label">
-            💬 02 — Ask a Question
+            💬 Ask a Question
           </p>
 
           <textarea
-            name="query"
-            rows="4"
             class="query-textarea"
-            placeholder="✏️ Type your question… e.g. What is the main topic of chapter 3?"
+            placeholder="Ask anything from your uploaded notes..."
           ></textarea>
 
-          <button type="submit" class="ask-btn">
+          <button class="ask-btn">
             🚀 Ask Now →
           </button>
 
         </section>
 
-        <!-- ===== ANSWER SECTION ===== -->
+        <!-- ANSWER -->
         <section class="card">
 
           <p class="section-label">
-            💡 03 — Answer
+            💡 Answer
           </p>
 
           <div class="answer-box">
@@ -248,7 +246,7 @@
 
   </div>
 
-  <!-- JavaScript -->
+  <!-- JS -->
   <script src="app.js"></script>
 
 </body>
